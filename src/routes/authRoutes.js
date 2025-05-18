@@ -1,0 +1,13 @@
+const path = require('path');
+const express = require('express');
+const router = express.Router();
+const userController = require('../controllers/authController');
+router.post('/signup', userController.register);
+router.post('/login', userController.login);
+router.post('/verifyOtp', userController.compareLoginWithOtp);
+router.post('/addPlaylist', userController.addToPlayList);
+router.get('/getPlaylist/:id', userController.getToPlayList);
+router.post('/deletePlaylist/:id', userController.deleteToPlayList);
+router.post('/deleteProfile', userController.deleteProfile);
+router.get('/getAllUser/:id', userController.getAllUser);
+module.exports = router;
