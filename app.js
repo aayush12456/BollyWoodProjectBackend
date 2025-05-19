@@ -7,7 +7,7 @@ const socketCon = require('./socket');
 const app = express();
 const server = http.createServer(app);
 const corsOptions = {
-    origin: 'http://localhost:3000',
+    origin: '*',
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 200
@@ -21,7 +21,7 @@ server.listen(port, () => {
 });
 const io = require('socket.io')(server, {
     cors: {
-        origin: 'http://localhost:3000', // or your frontend URL
+        origin: '*', // or your frontend URL
         // origin: 'https://apnapandating.netlify.app',
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
         credentials: true,
