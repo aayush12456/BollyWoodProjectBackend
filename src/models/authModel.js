@@ -51,7 +51,7 @@ playList: [playListSchema]
 
 authModel.methods.generateAuthToken = async function () {
     try {
-      console.log('toke data',this._id);
+      // console.log('toke data',this._id);
       // const token = jwt.sign(
       //   { _id: this._id.toString() },
       //   process.env.registerData,

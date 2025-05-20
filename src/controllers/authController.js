@@ -83,9 +83,9 @@ exports.compareLoginWithOtp=async (req,res)=>{
 exports.addToPlayList=async (req,res)=>{
     try{
     const playListObj=req.body
-    console.log('playlist obj',playListObj)
+    // console.log('playlist obj',playListObj)
      const phone=req.body.phone
-     console.log('phone in playlist',phone)
+    //  console.log('phone in playlist',phone)
     const loginObj=await authUser.findOne({phone:phone})
     loginObj.playList.push({
      movieId:playListObj.MovieId,
@@ -160,7 +160,7 @@ res.status(201).send({mssg:'delete profile Successfully',deleteUserObj:deletedUs
 exports.getAllUser=async (req,res)=>{
   try{
 const id=req.params.id
-console.log('user in all id',id)      
+// console.log('user in all id',id)      
 const allUserData=await authUser.find()
 const finalAllUser=allUserData.filter((item)=>item._id.toString()!==id)
 res.status(201).send({mssg:'get all user Successfully',getAllUserArray:finalAllUser}) 
